@@ -55,4 +55,4 @@ if __name__ == '__main__':
     print("Зарегистрированные эндпоинты:")
     for rule in app.url_map.iter_rules():
         print(f"  {rule.endpoint}: {rule.rule}")
-    app.run(debug=True)
+    app.run(debug=False, port=80, host='0.0.0.0')
