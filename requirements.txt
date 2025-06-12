@@ -1,0 +1,10 @@
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.3
+Flask-Login==0.6.2
+Werkzeug==2.3.7  # Убедитесь, что версия совместима с Flask
+python-dotenv==1.0.0
+WTForms==3.0.1
+Markdown==3.4.4
+Bleach==6.0.0
+Pillow==10.0.1
+pandas==2.0.3
