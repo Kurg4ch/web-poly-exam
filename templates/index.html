@@ -3,37 +3,7 @@
 {% from "macros.html" import render_field %}
 
 {% block content %}
-    <h2>Список книг</h2>
-
-    <div class="card mb-4">
-        <div class="card-header">Поиск книг</div>
-        <div class="card-body">
-            <form method="GET" action="{{ url_for('index') }}" class="row g-3">
-                <div class="col-md-6">
-                    {{ render_field(search_form.title, class_name='form-control') }}
-                </div>
-                <div class="col-md-6">
-                    {{ render_field(search_form.author, class_name='form-control') }}
-                </div>
-                <div class="col-md-6">
-                    {{ render_field(search_form.genres, class_name='form-select') }}
-                </div>
-                <div class="col-md-6">
-                    {{ render_field(search_form.publication_year, class_name='form-select') }}
-                </div>
-                <div class="col-md-3">
-                    {{ render_field(search_form.pages_from, class_name='form-control') }}
-                </div>
-                <div class="col-md-3">
-                    {{ render_field(search_form.pages_to, class_name='form-control') }}
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Найти</button>
-                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Сбросить</a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <h1 style="text-align: center;">Список книг</h1>
 
     {# Вариант 4: Раздел "Популярные книги" #}
     {% if popular_books %}
@@ -48,7 +18,7 @@
                                 {% if book.cover %}
                                     <img src="{{ url_for('uploaded_file', filename=book.cover.filename) }}" class="img-fluid rounded-start h-100" alt="{{ book.title }}" style="object-fit: cover;">
                                 {% else %}
-                                    <img src="{{ url_for('static', filename='images/no_cover.png') }}" class="img-fluid rounded-start h-100" alt="Нет обложки" style="object-fit: cover;">
+                                    <img src="{{ url_for('static', filename='images/no_cover.jpg') }}" class="img-fluid rounded-start h-100" alt="Нет обложки" style="object-fit: cover;">
                                 {% endif %}
                             </div>
                             <div class="col-md-8">
@@ -89,7 +59,7 @@
                         {% if book.cover %}
                             <img src="{{ url_for('uploaded_file', filename=book.cover.filename) }}" class="book-cover-thumbnail" alt="{{ book.title }}">
                         {% else %}
-                            <img src="{{ url_for('static', filename='images/no_cover.png') }}" class="book-cover-thumbnail" alt="Нет обложки">
+                            <img src="{{ url_for('static', filename='images/no_cover.jpg') }}" class="book-cover-thumbnail" alt="Нет обложки">
                         {% endif %}
                         <div>
                             <h4><a href="{{ url_for('view_book', book_id=book.id) }}">{{ book.title }} ({{ book.publication_year }})</a></h4>

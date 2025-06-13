@@ -8,7 +8,7 @@
             {% if book.cover %}
                 <img src="{{ url_for('uploaded_file', filename=book.cover.filename) }}" class="img-fluid rounded" alt="{{ book.title }}">
             {% else %}
-                <img src="{{ url_for('static', filename='images/no_cover.png') }}" class="img-fluid rounded" alt="Нет обложки">
+                <img src="{{ url_for('static', filename='images/no_cover.jpg') }}" class="img-fluid rounded" alt="Нет обложки">
             {% endif %}
         </div>
         <div class="col-md-8">
